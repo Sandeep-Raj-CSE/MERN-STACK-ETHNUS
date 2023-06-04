@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-2</title>
+    <style>
+    .tab{
+        text-align: center;
+    }
+    h2{
+        margin-top: 40px;
+        text-align: center;
+
+    }
+    .horizontal {
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        background-color: #ccc2c2;
+        margin:auto;
+        width: 20%;
+        border:2px solid;
+        border-color: black;
+        position: relative;
+        }
+
+        .line{
+        float: left;
+        border-right:1px solid #1c13c8;
+        }
+
+        li:last-child {
+        border-right: none;
+        }
+
+        li a {
+        display: block;
+        color:rgb(8, 110, 244);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+        background-color: #111;
+        }
+
+        .active {
+        background-color:#423333;
+        }
+        .horiz{
+            position: relative;
+            left:670px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="tab">Day-2 (CSS)</h1>
+    <div class="task5">
+        <h2>Task-5</h2>
+        <div>
+            <h3 class="horiz">Horizontal Nav Bar</h3>
+            <ul class="horizontal">
+                <li class="line"><a class="active" href="#home">Home</a></li>
+                <li class="line"><a href="#java">Java</a></li>
+                <li class="line"><a href="#html">HTML</a></li>
+                <li class="line"><a href="#css">CSS</a></li>
+              </ul>
+        </div>
+    </div> 
+</body>
+</html>
