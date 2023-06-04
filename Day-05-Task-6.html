@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Day-5</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h2{
+            margin-top: 40px;
+            text-align: center;
+
+        }
+        h3{
+            text-align: center;
+        }
+        .task5b{
+            margin: auto;
+            padding:10px;
+            width: 30%;
+            border:2px solid;
+            border-color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Day-5 (JAVASCRIPT)</h1>
+    <h2>Task-6</h2>
+    <div class="task5b">
+        <b><h3>Alphabetical Order</h3></b>
+        <label for="inputString">Enter a string:</label>
+        <input type="text" id="inputString">
+        <button onclick="sortString()">Sort</button>
+        <div id="result1"></div>
+    </div>
+    <script>
+        function sortString() {
+            var inputString = document.getElementById("inputString").value;
+            var sortedString = inputString.toLowerCase().split('').sort().join('');
+            document.getElementById("result1").innerHTML = "Sorted String: " + sortedString;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-5</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h2{
+            margin-top: 40px;
+            text-align: center;
+
+        }
+        .task2{
+            margin: auto;
+            padding: 10px;
+            width: 30%;
+            border:2px solid;
+            border-color: rgb(216, 9, 9);
+        }
+    </style>
+</head>
+<body>
+    <h1>Day-5 (JAVASCRIPT)</h1>
+    <h2>Task-1</h2>
+    <div class="task2">
+        <input type="button" onclick="time()" value="Show Time" /><br>
+        <p id="p1"></p><br>
+        <input type="button" onclick="date()" value="Show Date" /><br>
+        <p id="p2"></p>
+
+    </div>
+
+    <script>
+        function time(){
+            var date = new Date();
+	        document.getElementById("p1").innerHTML = date;
+
+        }
+        function date(){
+            var date = new Date();
+            var current_date = date.getDate()+"/"+(date.getMonth()+1)+"/"+ date.getFullYear();
+            document.getElementById("p2").innerHTML = current_date;
+        }
+    </script>
+    
+</body>
+</html>

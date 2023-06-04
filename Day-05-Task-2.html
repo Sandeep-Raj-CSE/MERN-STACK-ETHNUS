@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day-5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1{
+      text-align: center;
+    }
+    h2{
+      margin-top: 40px;
+      text-align: center;
+    }
+    p{
+      text-align: center; 
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    section {
+      padding: 20px;
+      display: none;
+    }
+
+    .navigation-buttons {
+      margin-top: 20px;
+      margin:auto;
+      width:10%;
+    }
+
+    .navigation-buttons button {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Day-5 (JAVASCRIPT)</h1>
+  <h2>Task-2</h2>
+  <header>
+    <h1>Single Page Navigation</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection(1)">Page 1</a></li>
+      <li><a href="#" onclick="showSection(2)">Page 2</a></li>
+      <li><a href="#" onclick="showSection(3)">Page 3</a></li>
+    </ul>
+  </nav>
+
+  <section id="section1">
+    <h2>Page 1</h2>
+    <p>This is the content of Page 1.</p>
+    <div class="navigation-buttons">
+      <button onclick="showSection(3)">Previous</button>
+      <button onclick="showSection(2)">Next</button>
+    </div>
+  </section>
+
+  <section id="section2">
+    <h2>Page 2</h2>
+    <p>This is the content of Page 2.</p>
+    <div class="navigation-buttons">
+      <button onclick="showSection(1)">Previous</button>
+      <button onclick="showSection(3)">Next</button>
+    </div>
+  </section>
+
+  <section id="section3">
+    <h2>Page 3</h2>
+    <p>This is the content of Page 3.</p>
+    <div class="navigation-buttons">
+      <button onclick="showSection(2)">Previous</button>
+      <button onclick="showSection(1)">Next</button>
+    </div>
+  </section>
+
+  <script>
+    function showSection(sectionNumber) {
+      var sections = document.querySelectorAll('section');
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      var selectedSection = document.querySelector('#section' + sectionNumber);
+      selectedSection.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

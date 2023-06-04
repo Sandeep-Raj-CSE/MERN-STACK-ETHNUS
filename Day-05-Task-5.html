@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Day-5</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h2{
+            margin-top: 40px;
+            text-align: center;
+
+        }
+        .task5a{
+            margin: auto;
+            padding:10px;
+            width: 30%;
+            border:2px solid;
+            border-color: black;
+        }
+        h3{
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Day-5 (JAVASCRIPT)</h1>
+    <h2>Task-5</h2>
+    <div class="task5a">
+        <b><h3>Number Reversal</h3></b>
+        <label for="inputNumber">Enter a number:</label>
+        <input type="number" id="inputNumber">
+        <button onclick="reverseNumber()">Reverse</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function reverseNumber() {
+            var number = document.getElementById("inputNumber").value;
+            var reversedNumber = parseInt(number.toString().split('').reverse().join(''));
+            document.getElementById("result").innerHTML = "Reversed Number: " + reversedNumber;
+        }
+    </script>
+    
+</body>
+</html>

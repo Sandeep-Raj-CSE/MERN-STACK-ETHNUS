@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+    #train {
+         position: relative;
+         left: 0;
+         transition: left 0.5s linear;
+      }
+   </style>
+   <script type="text/javascript">
+      var trainElement;
+      var isMoving = false;
+      var animationInterval;
+
+      function init() {
+         trainElement = document.getElementById('train');
+      }
+
+      function moveTrain() {
+         var currentPosition = parseInt(trainElement.style.left) || 0;
+         var newPosition = currentPosition + 10;
+         trainElement.style.left = newPosition + 'px';
+
+         if (newPosition >= window.innerWidth) {
+            stopTrain();
+         }
+      }
+
+      function startTrain() {
+         if (!isMoving) {
+            isMoving = true;
+            animationInterval = setInterval(moveTrain, 100);
+         }
+      }
+
+      function stopTrain() {
+         if (isMoving) {
+            isMoving = false;
+            clearInterval(animationInterval);
+         }
+      }
+
+      window.onload = init;
+   </script>
+</head>
+
+<body>
+   <div id="train">
+    <img style="width: 200px; height: 100px;" src="train1.png">
+    </div>
+   <button onclick="startTrain()">Start</button>
+   <button onclick="stopTrain()">Stop</button>
+</body>
+
+</html>

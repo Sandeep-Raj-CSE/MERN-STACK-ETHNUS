@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-5</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h2{
+            margin-top: 40px;
+            text-align: center;
+
+        }
+        .task1{
+            margin: auto;
+            padding: 10px;
+            width: 30%;
+            border:2px solid;
+            border-color: rgb(216, 9, 9);
+        }
+    </style>
+</head>
+<body>
+    <h1>Day-5 (JAVASCRIPT)</h1>
+    <h2>Task-7</h2>
+    <div class="task1">
+        <h3>Simple Calculator</h3>
+        <form>
+            <input type="text" id="val1" placeholder="Enter the number" /><br><br>
+            <input type="text" id="val2" placeholder="Enter the number" /><br><br>
+            <input type="button" onclick="add()" value="Addition" />
+            <input type="button" onclick="sub()" value="Substract" />
+            <input type="button" onclick="mul()" value="Multiply" />
+            <input type="button" onclick="div()" value="Divide" />
+            <p>The Result is : <b><span id="result"></span></b></p>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        function getValue(val1,val2){
+        x = document.getElementById("val1").value;
+        y = document.getElementById("val2").value;
+        }
+        function add() {
+        getValue();
+        sum=Number(x)+Number(y);
+        document.getElementById('result').innerHTML = sum;
+        }
+        function sub() {
+        getValue();
+        subs=Number(x)-Number(y);
+        document.getElementById('result').innerHTML = subs;
+        }
+        function mul() {
+        getValue();
+        mult=Number(x)*Number(y);
+        document.getElementById('result').innerHTML = mult;
+        }
+        function div() {
+        getValue();
+        divd=Number(x)/Number(y);
+        document.getElementById('result').innerHTML = divd;
+        }
+    </script>
+    
+</body>
+</html>
