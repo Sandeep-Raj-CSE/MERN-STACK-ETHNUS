@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Day-4</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+    .invalid-feedback {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="myForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" required>
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" required>
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" required>
+        <div class="invalid-feedback">Please enter a password.</div>
+      </div>
+      <div class="form-group">
+        <label for="hobbies">Hobbies:</label>
+        <input type="text" class="form-control" id="hobbies">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      var form = document.getElementById("myForm");
+      form.classList.remove("was-validated");
+
+      if (form.checkValidity() === false) {
+        event.stopPropagation();
+        form.classList.add("was-validated");
+        return;
+      }
+
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var hobbies = document.getElementById("hobbies").value;
+
+      console.log("Name: " + name);
+      console.log("Email: " + email);
+      console.log("Password: " + password);
+      console.log("Hobbies: " + hobbies);
+
+      form.reset();
+      form.classList.remove("was-validated");
+    });
+  </script>
+</body>
+</html>

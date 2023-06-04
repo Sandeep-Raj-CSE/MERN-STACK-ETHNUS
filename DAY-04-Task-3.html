@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Day-4</title>
+    
+  <style>
+    h1{
+        text-align: center;
+    }    
+    h2{
+        margin-top: 40px;
+        text-align: center;
+    }     
+    .form-group {
+      position: relative;
+    }
+    .form-group i {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .form-group .error-text {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+    <h1>Day-4 (BOOTSTRAP)</h1>
+    <div class="container mt-5">
+    <h2>Task-3</h2>
+    <form id="projectForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <i class="fas fa-user"></i>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+        <small class="error-text"></small>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <i class="fas fa-user"></i>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+        <small class="error-text"></small>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <i class="fa fa-at"></i>
+        
+        <input type="email" class="form-control" id="email" name="email" placeholder="E-mail Address">
+        <small class="error-text"></small>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <i class="fas fa-phone"></i>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="(+91)">
+        <small class="error-text"></small>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label><i class="fa fa-home fa-fw" aria-hidden="true"></i>
+        <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+        <small class="error-text"></small>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <i class="fas fa-city"></i>
+        <input type="text" class="form-control" id="city" name="city" placeholder="City">
+        <small class="error-text"></small>
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <i class="fas fa-flag"></i>
+        <input type="text" class="form-control" id="state" name="state" placeholder="State">
+        <small class="error-text"></small>
+      </div>
+      <div>Do You Have Hosting?
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+            <label class="form-check-label" for="flexRadioDefault2">
+              No
+            </label>
+          </div>  
+      </div>
+      <div class="form-group">
+        <label for="projectDescription">Project Description</label>
+        <i class="fas fa-file-alt"></i>
+        <textarea class="form-control" id="projectDescription" name="projectDescription"></textarea>
+        <small class="error-text"></small>
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </div>
+  <script>
+    const form = document.getElementById('projectForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      clearErrorMessages();
+
+      const firstName = document.getElementById('firstName');
+      const lastName = document.getElementById('lastName');
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      const address = document.getElementById('address');
+      const city = document.getElementById('city');
+      const state = document.getElementById('state');
+      const projectDescription = document.getElementById('projectDescription');
+
+      if (!firstName.value) {
+        showError(firstName, 'First name is required');
+      }
+
+      if (!lastName.value) {
+        showError(lastName, 'Last name is required');
+      }
+
+      if (!email.value) {
+        showError(email, 'Email is required');
+      } else if (!validateEmail(email.value)) {
+        showError(email, 'Please enter a valid email address');
+      }
+
+      if (!phone.value) {
+        showError(phone, 'Phone number is required');
+      }
+
+      if (!address.value) {
+        showError(address, 'Address is required');
+      }
+
+      if (!city.value) {
+        showError(city, 'City is required');
+      }
+
+      if (!state.value) {
+        showError(state, 'State is required');
+      }
+
+      if (!projectDescription.value) {
+        showError(projectDescription, 'Project description is required');
+      }
+    });
+
+    function showError(input, message) {
+      const errorText = input.nextElementSibling;
+      errorText.textContent = message;
+    }
+
+    function clearErrorMessages() {
+      const errorTextList = document.getElementsByClassName('error-text');
+      for (let i = 0; i < errorTextList.length; i++) {
+        errorTextList[i].textContent = '';
+      }
+    }
+
+    function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  </script>
+</body>
+</html>
